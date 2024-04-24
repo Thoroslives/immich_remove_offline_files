@@ -1,4 +1,4 @@
-# immich_remove_offline_files
+# Immich Remove Offline Files
 A simple way to remove orphaned offline assets from Immich's database.
 
 This Python script assists in managing the Immich database by detecting and removing orphaned media assets. 
@@ -11,7 +11,22 @@ Orphaned assets can be checked via the repair page within the admin interface of
 
 Before running the script, ensure you have Python installed on your machine. The script requires Python 3.x.
 
-You will also need to install the following Python packages:
+### Download the Script
+
+Simply download the script directly. Follow these steps:
+
+1. Navigate to the GitHub page where the script is hosted.
+2. Find the script file `immich_remove_offline_files.py`.
+3. Right-click on the file and select "Save link as..." to save the script to your local machine.
+
+Alternatively, if you are familiar with `curl` or `wget`, you can download the script using a command line tool. For example:
+
+```bash
+curl -O https://raw.githubusercontent.com/Thoroslives/immich_remove_offline_files/main/immich_remove_offline_files.py
+```
+### Install Dependencies
+
+The script requires several Python packages to function correctly.
 - `requests`
 - `halo`
 - `tabulate`
@@ -21,11 +36,13 @@ These can be installed using the following command:
 ```bash
 pip install requests halo tabulate tqdm
 ```
-## Configuration
+Ensure all dependencies are installed correctly before attempting to run the script.
 
+### Prepare Configuration
 To use the script, you will need:
 - An **Admin API key** from Immich for fetching reports.
 - A **User-specific API key** for deleting assets.
+Store these keys securely and use them as required when running the script.
 
 Instructions for which can be found in the Immich docs - [Obtain the API key](https://immich.app/docs/features/command-line-interface#obtain-the-api-key)
 
@@ -50,7 +67,7 @@ python3 immich_remove_offline_files.py
 ```
 To run the script without prompts (useful for automation):
 ```bash
-python3 immich_remove_offline_files.py --admin_apikey your_admin_key --user_apikey your_user_key --immichaddress http://yourimmichserver.com:port
+python3 immich_remove_offline_files.py --admin_apikey "your_admin_api_key" --user_apikey "your_user_api_key" --immichaddress "http://IPADDRESS:port"
 ```
 ## How It Works
 
@@ -69,7 +86,7 @@ Below are some of the errors you might encounter and the suggested steps to reso
 
 - **Connection Errors**: If the script cannot reach the Immich server, ensure that the server address is correct and that your network connection is stable.
 - **API Key Errors**: If you receive an error related to the API key, check that your API keys are correct and have the necessary permissions for the operations you are attempting.
-- **Permission Errors**: Make sure the user API key has the appropriate permissions to delete assets. This may be becuase the results will show all orphaned assets located on the immich database using the admin API, but the delete API of the user only has the permissions to delete the assets for that user, if you run into a `400 error` you may need to asesess the assets to see what library they are located in and use the requisite user API key to delete successfully.
+- **Permission Errors**: Ensure the user API key has appropriate permissions to delete assets. Since the results will display all orphaned assets located in the Immich database using the admin API, the delete API of the user only allows deletion of the assets that the user has permission to manage. If you encounter a `400 error`, it may be necessary to assess the assets to determine which library they are located in and use the corresponding user API key that has the necessary permissions to delete those specific assets.
 
 ### Debugging Tips
 
