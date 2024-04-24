@@ -33,7 +33,7 @@ Instructions for which can be found in the Immich docs - [Obtain the API key](ht
 
 To run the script, navigate to the directory containing the script and execute:
 ```bash
-python3 orphan_asset_cleaner.py
+python3 immich_remove_offline_files.py
 ```
 ### Optional Arguments
 
@@ -46,11 +46,11 @@ python3 orphan_asset_cleaner.py
 
 To run the script with prompts for necessary inputs:
 ```bash
-python3 orphan_asset_cleaner.py
+python3 immich_remove_offline_files.py
 ```
 To run the script without prompts (useful for automation):
 ```bash
-python3 orphan_asset_cleaner.py --admin_apikey your_admin_key --user_apikey your_user_key --immichaddress http://yourimmichserver.com:port
+python3 immich_remove_offline_files.py --admin_apikey your_admin_key --user_apikey your_user_key --immichaddress http://yourimmichserver.com:port
 ```
 ## How It Works
 
