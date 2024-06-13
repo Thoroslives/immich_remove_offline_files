@@ -42,7 +42,7 @@ def main():
     immich_parsed_url = urlparse(immich_server)
     base_url = f'{immich_parsed_url.scheme}://{immich_parsed_url.netloc}'
     api_url = f'{base_url}/api'
-    file_report_url = api_url + '/report'
+    file_report_url = api_url + '/reports'
     headers = {'x-api-key': admin_api_key}
 
     print()
@@ -81,7 +81,7 @@ def main():
     with tqdm(total=num_entries, desc="Deleting orphaned media assets", unit="asset") as progress_bar:
         for asset in orphan_media_assets:
             entity_id = asset['entityId']
-            asset_url = f'{api_url}/asset'
+            asset_url = f'{api_url}/assets'
             delete_payload = json.dumps({'force': True, 'ids': [entity_id]})
             headers = {'Content-Type': 'application/json', 'x-api-key': user_api_key}
             try:
