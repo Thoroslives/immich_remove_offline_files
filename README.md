@@ -1,9 +1,10 @@
 # Immich Remove Offline Files
+
 A simple way to remove orphaned offline assets from Immich's database.
 
-This Python script assists in managing the Immich database by detecting and removing orphaned media assets. 
+This Python script assists in managing the Immich database by detecting and removing orphaned media assets.
 
-These orphans may occur if files are deleted from the filesystem without being properly removed from Immich. 
+These orphans may occur if files are deleted from the filesystem without being properly removed from Immich.
 
 Orphaned assets can be checked via the repair page within the admin interface of Immich.
 
@@ -24,34 +25,42 @@ Alternatively, if you are familiar with `curl` or `wget`, you can download the s
 ```bash
 curl -O https://raw.githubusercontent.com/Thoroslives/immich_remove_offline_files/main/immich_remove_offline_files.py
 ```
+
 ### Install Dependencies
 
 The script requires several Python packages to function correctly.
+
 - `requests`
 - `halo`
 - `tabulate`
 - `tqdm`
 
 These can be installed using the following command:
+
 ```bash
 pip install requests halo tabulate tqdm
 ```
+
 Ensure all dependencies are installed correctly before attempting to run the script.
 
 ### Prepare Configuration
+
 To use the script, you will need:
+
 - An **Admin API key** from Immich for fetching reports.
 - A **User-specific API key** for deleting assets.
-Store these keys securely and use them as required when running the script.
+  Store these keys securely and use them as required when running the script.
 
 Instructions for which can be found in the Immich docs - [Obtain the API key](https://immich.app/docs/features/command-line-interface#obtain-the-api-key)
 
 ## Usage
 
 To run the script, navigate to the directory containing the script and execute:
+
 ```bash
 python3 immich_remove_offline_files.py
 ```
+
 ### Optional Arguments
 
 - `--admin_apikey [ADMIN_API_KEY]`: Immich admin API key for fetching reports.
@@ -62,23 +71,28 @@ python3 immich_remove_offline_files.py
 ### Examples
 
 To run the script with prompts for necessary inputs:
+
 ```bash
 python3 immich_remove_offline_files.py
 ```
+
 To run the script without prompts (useful for automation):
+
 ```bash
 python3 immich_remove_offline_files.py --admin_apikey "your_admin_api_key" --user_apikey "your_user_api_key" --immichaddress "http://IPADDRESS:port"
 ```
+
 ## How It Works
 
 The script performs the following steps:
+
 1. Fetches a report of orphaned media assets from the Immich server using the admin API key.
 2. Displays the list of orphaned assets and asks for confirmation before deletion (unless `--no_prompt` is used).
 3. Deletes the orphaned assets using the user API key, provided the confirmation was `yes`.
 
 ## Error Handling
 
-The script includes basic error handling to manage common issues such as connectivity problems, invalid API keys, and permissions issues. 
+The script includes basic error handling to manage common issues such as connectivity problems, invalid API keys, and permissions issues.
 
 Below are some of the errors you might encounter and the suggested steps to resolve them:
 
@@ -100,6 +114,4 @@ Contributions to this project are welcome! Please feel free to submit issues, fo
 
 ## License
 
-This project is licensed under the GNU Affero General Public License version 3 (AGPLv3) to align with the licensing of Immich, which this script interacts with. For more details on the rights and obligations under this license, see the [GNU licenses page](https://opensource.org/license/agpl-v3).
-
-
+This project is licensed under the GNU Affero General Public License version 3 (AGPLv3) to align with the licensing of Immich, which this script interacts with. For more details on the rights and obligations under this license, see the [GNU licenses page](https://www.gnu.org/licenses/agpl-3.0.en.html).
