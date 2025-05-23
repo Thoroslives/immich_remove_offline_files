@@ -1,3 +1,11 @@
+> **⚠️ NOTICE: PROJECT NO LONGER MAINTAINED ⚠️**  
+>
+> This project is no longer functional due to the removal of required API endpoints from Immich, as confirmed in [Discussion #18538](https://github.com/immich-app/immich/discussions/18538).  
+> Consequently, this project is no longer being maintained.
+>
+> The Immich team has indicated that an official method to support this functionality may be integrated in the future.  
+> If you'd like to see this prioritised, please consider voicing your support in [Discussion #18538](https://github.com/immich-app/immich/discussions/18538).
+
 # Immich Remove Offline Files
 
 A simple way to remove orphaned offline assets from Immich's database.
