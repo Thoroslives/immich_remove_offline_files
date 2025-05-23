@@ -1,10 +1,10 @@
 > **⚠️ NOTICE: PROJECT NO LONGER MAINTAINED ⚠️**  
 >
-> This project is no longer functional due to the removal of required API endpoints from Immich, as confirmed in [Discussion #18538](https://github.com/immich-app/immich/discussions/18538).  
-> Consequently, this project is no longer being maintained.
+> This project is no longer functional due to the removal of required API endpoints from Immich, as confirmed in the following discussion: [Discussion #18543](https://github.com/immich-app/immich/discussions/18543).  
+> As a result, this project is no longer being maintained.
 >
 > The Immich team has indicated that an official method to support this functionality may be integrated in the future.  
-> If you'd like to see this prioritised, please consider voicing your support in [Discussion #18538](https://github.com/immich-app/immich/discussions/18538).
+> If you'd like to see progress on this, please consider adding your voice to [Discussion #18543](https://github.com/immich-app/immich/discussions/18543).
 
 # Immich Remove Offline Files
 
