@@ -8,5 +8,5 @@ include:
 
 variables:
   # The GitHub copy of this repo stays, so GitLab pushes to it once the secret
-  # scan has passed. Dormant until GITHUB_MIRROR_TOKEN is set on the group.
+  # scan has passed. GITHUB_TOKEN is inherited from the apps group.
   GITHUB_MIRROR_REPO: Thoroslives/immich_remove_offline_files
