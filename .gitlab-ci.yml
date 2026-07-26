@@ -2,3 +2,11 @@ include:
   - project: 'ci/templates'
     ref: main
     file: '/secret-detection.gitlab-ci.yml'
+  - project: 'ci/templates'
+    ref: main
+    file: '/github-mirror.gitlab-ci.yml'
+
+variables:
+  # The GitHub copy of this repo stays, so GitLab pushes to it once the secret
+  # scan has passed. Dormant until GITHUB_MIRROR_TOKEN is set on the group.
+  GITHUB_MIRROR_REPO: Thoroslives/immich_remove_offline_files
