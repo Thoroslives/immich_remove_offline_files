@@ -1,0 +1,4 @@
+include:
+  - project: 'ci/templates'
+    ref: main
+    file: '/secret-detection.gitlab-ci.yml'
